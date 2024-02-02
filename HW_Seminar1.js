@@ -12,31 +12,31 @@
 // • Реализуйте кастомный итератор для объекта musicCollection. Итератор должен перебирать альбомы по порядку.
 // • Используйте цикл for...of для перебора альбомов в музыкальной коллекции и вывода их на консоль в формате: Название альбома - Исполнитель (Год выпуска)
 
-// const albums = [
-//     {title: "FACE", artist: "Jimin", year: "2023"},
-//     {title: "D-DAY", artist: "Agust D", year: "2022"},
-//     {title: "GUTS", artist: "Olivia Rodrigo", year: "2020"},
-// ]
+const albums = [
+    {title: "FACE", artist: "Jimin", year: "2023"},
+    {title: "D-DAY", artist: "Agust D", year: "2022"},
+    {title: "GUTS", artist: "Olivia Rodrigo", year: "2020"},
+]
 
-// const musicCollection = {
-//     albums: [...albums],
-//     [Symbol.iterator]: function () {
-//         let index = 0;
-//         return {
-//             next: () => {
-//                 if (index < albums.length) {
-//                     return {value: this.albums[index++], done: false};
-//                 } else {
-//                     return {done: true};
-//                 }
-//             }
-//         }
-//     }
-// }
+const musicCollection = {
+    albums: [...albums],
+    [Symbol.iterator]: function () {
+        let index = 0;
+        return {
+            next: () => {
+                if (index < albums.length) {
+                    return {value: this.albums[index++], done: false};
+                } else {
+                    return {done: true};
+                }
+            }
+        }
+    }
+}
 
-// for (const album of musicCollection) {
-//     console.log(`${album.title} - ${album.artist}(${album.year})`);
-// }
+for (const album of musicCollection) {
+    console.log(`${album.title} - ${album.artist}(${album.year})`);
+}
 
 
 
@@ -71,20 +71,6 @@
 // Клиент Мария заказала: Суши "Калифорния" и Пиццу "Маргарита".
 // Клиент Ирина заказала: Чизкейк.
 
-// // Map: повара => повар: Set(блюда)
-// let chefs = new Map();
-
-// const vitya = {name: "Виктор"};
-// const vityaDishes = new Set(["Маргарита", "Пепперони"])
-// chefs.set(vitya, vityaDishes);
-
-// const olya = {name: "Ольга"};
-// const olyaDishes = new Set(["Филадельфия", "Калифорния"])
-// chefs.set(olya, olyaDishes);
-
-// const dima = {name: "Дмитрий"};
-// const dimaDishes = new Set(["Тирамису", "Чизкейк"])
-// chefs.set(dima, dimaDishes);
 
 //Map: блюда => название: повар
 
